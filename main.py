@@ -2,6 +2,7 @@ from storage import load_tasks
 from tasks import add_task, delete_task, mark_completed
 from api import get_quote, get_time
 import uuid
+from datetime import datetime
 
 def main():
     tasks = load_tasks()
@@ -21,7 +22,7 @@ def main():
                 "id": str(uuid.uuid4()), 
                 "title": title,
                 "quote": get_quote(),
-                "created_at": get_time(),
+                "created_at": datetime,
                 "completed": False
             }
             tasks = add_task(tasks, task)
